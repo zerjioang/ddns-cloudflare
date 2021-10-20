@@ -4,13 +4,13 @@
 
 ## Goal
 
-It updates your device (raspberr pi, beaglebone, linux, container, vm, etc) IP address on a Dynamic
+It updates your device (raspberru pi, beaglebone, linux, container, vm, etc) IP address on a Dynamic
 DNS provider like Cloudflare so that you can forget about device IP and use it a DNS name.
 
 ## Requirements
 
-* A owned DNS.
 * A Cloudflare account.
+* A owned domain name registered in Cloudflare.
 * A Token created using Cloudflare dashboard to allow this application to edit your DNS Zone info.
 
 ## Usage
@@ -22,13 +22,13 @@ X_CF_AGENT_DNS_A_RECORD=rpi \
 cfagent update
 ```
 
-Previous command will try to update the DNS A Record of rpi.example.com with the host actual public IP
+Previous command will try to update the DNS A Record of `rpi.example.com` with the host actual public IP
 
 ### Customization of DDNS Cloudflare Agent
 
-* X_CF_AGENT_TOKEN: token provided by Cloudflare in order to authenticate API calls
-* X_CF_AGENT_ZONE: name of the DNS zone you want to edit
-* X_CF_AGENT_DNS_A_RECORD: name of the DNS Record name you want to edit.
+* **X_CF_AGENT_TOKEN**: token provided by Cloudflare in order to authenticate API calls
+* **X_CF_AGENT_ZONE**: name of the DNS zone you want to edit
+* **X_CF_AGENT_DNS_A_RECORD**: name of the DNS Record name you want to edit.
 
 ## Troubleshooting
 
