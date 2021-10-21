@@ -8,6 +8,10 @@ import (
 	"github.com/zerjioang/ddns-cloudflare/api"
 )
 
+const (
+	version = "0.3"
+)
+
 var rootCmd = &cobra.Command{
 	Use:   "ddns-cloudflare",
 	Short: "CloudFlare DDNS Agent",
@@ -44,9 +48,19 @@ var monitorCmd = &cobra.Command{
 	},
 }
 
+var versionCmd = &cobra.Command{
+	Use:   "version",
+	Short: "print version",
+	Long:  `prints ddns-cloudflare agent application version`,
+	Run: func(cmd *cobra.Command, args []string) {
+		fmt.Println(version)
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(startCmd)
 	rootCmd.AddCommand(monitorCmd)
+	rootCmd.AddCommand(versionCmd)
 }
 
 // Execute is the main command line application entry point
