@@ -12,12 +12,12 @@ CGO_ENABLED=0 go build \
   -a \
   -tags osusergo,netgo \
   -trimpath \
-  -o cfagent && \
+  -o ddns-cloudflare && \
 
 echo "compilation finished"
-ls -alh cfagent
+ls -alh ddns-cloudflare
 
-# upx --brute cfagent
+# upx --brute ddns-cloudflare
 
 # go releaser
 # go install github.com/goreleaser/goreleaser@latest

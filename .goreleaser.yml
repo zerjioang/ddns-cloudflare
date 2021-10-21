@@ -1,6 +1,6 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
-project_name: cfagent
+project_name: ddns-cloudflare
 before:
   hooks:
     # You may remove this if you don't use go modules.
@@ -8,7 +8,7 @@ before:
     # you may remove this if you don't need go generate
     - go generate ./...
 builds:
-  - binary: "bin/cfagent"
+  - binary: "bin/ddns-cloudflare"
   # Custom flags templates.
   - flags:
       - -v

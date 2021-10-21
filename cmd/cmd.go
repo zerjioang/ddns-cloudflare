@@ -9,7 +9,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "cfagent",
+	Use:   "ddns-cloudflare",
 	Short: "CloudFlare DDNS Agent",
 	Long:  `CloudFlare DDNS Agent`,
 	Run: func(cmd *cobra.Command, args []string) {

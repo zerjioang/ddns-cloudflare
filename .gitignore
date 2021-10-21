@@ -17,5 +17,5 @@
 # old tokens of cf
 secret.txt
 dist/
-cfagent
+ddns-cloudflare
 \.idea

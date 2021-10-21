@@ -43,7 +43,7 @@ Some usage examples:
 X_CF_AGENT_TOKEN=yourtoken \
 X_CF_AGENT_ZONE=example.com \
 X_CF_AGENT_DNS_A_RECORD=rpi \
-cfagent update
+ddns-cloudflare update
 ```
 
 ```bash
@@ -51,7 +51,7 @@ export X_CF_AGENT_TOKEN=yourtoken
 export X_CF_AGENT_ZONE=example.com
 export X_CF_AGENT_DNS_A_RECORD=rpi
 
-cfagent update
+ddns-cloudflare update
 ```
 
 ```bash
@@ -59,7 +59,7 @@ echo 'export X_CF_AGENT_TOKEN=yourtoken' >> $HOME/.bashrc
 echo 'export X_CF_AGENT_ZONE=example.com' >> $HOME/.bashrc
 echo 'export X_CF_AGENT_DNS_A_RECORD=rpi' >> $HOME/.bashrc
 
-cfagent update
+ddns-cloudflare update
 ```
 
 Previous command will try to update the DNS A Record of `rpi.example.com` with the host actual public IP
@@ -74,12 +74,12 @@ Previous command will try to update the DNS A Record of `rpi.example.com` with t
 
 ### Using systemd autostart
 
-Edit the cfagent.service file and move it to `/etc/systemd/system/`, then run:
+Edit the ddns-cloudflare.service file and move it to `/etc/systemd/system/`, then run:
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable cfagent
-sudo systemctl start cfagent
+sudo systemctl enable ddns-cloudflare
+sudo systemctl start ddns-cloudflare
 ```
 ## Troubleshooting
 
