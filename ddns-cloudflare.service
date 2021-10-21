@@ -5,7 +5,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/sh -c '/opt/ddns-cloudflare/ddns-cloudflare update
+ExecStart=/bin/sh -c '/opt/ddns-cloudflare/ddns-cloudflare monitor
 Restart=always
 RestartSec=3
 
