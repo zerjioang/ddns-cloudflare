@@ -10,12 +10,14 @@
     	<img alt="Software License" src="http://img.shields.io/:license-GPL3-brightgreen.svg?style=flat-square"/>
     </a>
     <a href="https://travis-ci.org/zerjioang/ddns-cloudflare">
-      <img alt="Build Status" src="https://travis-ci.org/zerjioang/ddns-cloudflare.svg?branch=master">
+      <img alt="Build Status" src="https://github.com/zerjioang/ddns-cloudflare/actions/workflows/go.yml/badge.svg">
     </a>
 	<a href="https://pkg.go.dev/github.com/zerjioang/ddns-cloudflare">
     	<img alt="Package documentation" src="http://img.shields.io/:Go-docs-blue.svg?style=flat-square"/>
     </a>
 </p>
+
+![example workflow](https://github.com/zerjioang/ddns-cloudflare/actions/workflows/go/badge.svg)
 
 ## Introduction
 
