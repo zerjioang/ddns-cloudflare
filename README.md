@@ -114,4 +114,18 @@ If you set the wrong scope of the token, you have to create a new one.
 
 ## License
 
-MIT
+<p align="center">
+  <img alt="GPLv3 logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/GPLv3_Logo.svg/1280px-GPLv3_Logo.svg.png" width="100px"></img>
+</p>
+
+All rights reserved to project author(s)
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+ * Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+ * Uses GPL license described below
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+See [**LICENSE**](LICENSE) file for full license details.
