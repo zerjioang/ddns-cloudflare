@@ -5,9 +5,14 @@
 <p align="center">
     <a href="https://github.com/zerjioang/ddns-cloudflare/releases"/>
     <a href="https://goreportcard.com/badge/github.com/zerjioang/ddns-cloudflare"/>
-    <a href="https://github.com/zerjioang/ddns-cloudflare/blob/master/LICENSE"><img alt="Software License" src="http://img.shields.io/:license-GPL3-brightgreen.svg?style=flat-square"></a>
+    <a href="https://github.com/zerjioang/ddns-cloudflare/blob/master/LICENSE">
+    	<img alt="Software License" src="http://img.shields.io/:license-GPL3-brightgreen.svg?style=flat-square"/>
+    </a>
     <a href="https://travis-ci.org/zerjioang/ddns-cloudflare">
       <img alt="Build Status" src="https://travis-ci.org/zerjioang/ddns-cloudflare.svg?branch=master">
+    </a>
+	<a href="https://pkg.go.dev/github.com/zerjioang/ddns-cloudflare">
+    	<img alt="Package documentation" src="http://img.shields.io/:Go-docs-blue.svg?style=flat-square"/>
     </a>
 </p>
 
