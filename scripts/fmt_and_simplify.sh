@@ -7,7 +7,7 @@ cd ..
 
 echo "formatting source code with gofmt (and simplification)"
 
-packageName="github.com/zerjioang/cf-agent"
+packageName="github.com/zerjioang/ddns-cloudflare"
 
 #get all files excluding vendors
 filelist=$(find ./ -name "*.go" | grep -vendor)

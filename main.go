@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/zerjioang/cf-agent/cmd"
+	"github.com/zerjioang/ddns-cloudflare/cmd"
 )
 
 // main is the main entry point of the service

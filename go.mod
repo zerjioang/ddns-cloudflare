@@ -1,4 +1,4 @@
-module github.com/zerjioang/cf-agent
+module github.com/zerjioang/ddns-cloudflare
 
 go 1.17
 

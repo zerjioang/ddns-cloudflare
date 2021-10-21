@@ -1,6 +1,21 @@
-# Cloudflare DDNS Agent
+<p align="center">
+  <img alt="Cloudflare DDNS Agent logo" src="./readme/header.png" width="auto"></img>
+</p>
 
-> This is an unofficial development. Cloudflare has not official support for it.
+<p align="center">
+    <a href="https://github.com/zerjioang/ddns-cloudflare/releases">
+    <a href="https://github.com/zerjioang/ddns-cloudflare/blob/master/LICENSE"><img alt="Software License" src="http://img.shields.io/:license-gpl3-brightgreen.svg?style=flat-square"></a>
+    <a href="https://travis-ci.org/zerjioang/ddns-cloudflare">
+      <img alt="Build Status" src="https://travis-ci.org/zerjioang/ddns-cloudflare.svg?branch=master">
+    </a>
+</p>
+
+## Introduction
+
+DDNS is an agent that continuously monitors changes in the public Internet IP address of a connection for a host and updates Cloudflare's DNS when a change is detected.
+
+An example setup illustrated below has a Raspberry Pi running a webserver with DDNS on a home Internet connection. The website's domain name (let's use example.com) resolves to Cloudflare's DNS servers. When a web client access example.com, the HTTP/S connection terminates on Cloudflare's infrastructure. Cloudflare then proxies the connection to the home Internet connection where the home router port forwards to the Raspberry Pi. At any time if the home Internet connection IP address changes, DDNS sends an update informing Cloudflare of the new home IP address for it to proxy to.
+
 
 ## Goal
 
@@ -30,6 +45,17 @@ Previous command will try to update the DNS A Record of `rpi.example.com` with t
 * **X_CF_AGENT_ZONE**: name of the DNS zone you want to edit
 * **X_CF_AGENT_DNS_A_RECORD**: name of the DNS Record name you want to edit.
 
+## Configure autostart
+
+### Using systemd autostart
+
+Edit the cfagent.service file and move it to `/etc/systemd/system/`, then run:
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable cfagent
+sudo systemctl start cfagent
+```
 ## Troubleshooting
 
 ### API Token must not be empty

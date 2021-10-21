@@ -4,7 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/zerjioang/cf-agent/datatypes"
+	"github.com/zerjioang/ddns-cloudflare/datatypes"
 )
 
 // Start executes the IP update method

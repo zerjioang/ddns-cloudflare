@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/spf13/cobra"
-	"github.com/zerjioang/cf-agent/api"
+	"github.com/zerjioang/ddns-cloudflare/api"
 )
 
 var rootCmd = &cobra.Command{
