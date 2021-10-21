@@ -9,15 +9,15 @@ import (
 
 // Start executes the IP update method
 func Start() error {
-	defer measureTime(time.Now(), "cloudflare ddns updater")
+	defer measureTime(time.Now(), "cloudflare DDNS-updater")
 	log.Println("Updating device IP. Please wait...")
 	p := datatypes.NewPayload()
-	log.Println("Requesting IP check for: ", p.Zone+"."+p.DNSRecord)
+	log.Println("Requesting IP check for: ", p.FQDN())
 	log.Println("Reading current device IP. Please wait...")
 	currIp := externalIP()
-	log.Println("Readed IP: ", currIp)
+	log.Println("Read IP: ", currIp)
 	log.Println("Connecting with Cloudflare services...")
-	return triggerDDNSUpdate(p.Token, p.Zone, "console", currIp)
+	return triggerDDNSUpdate(p, currIp)
 }
 
 // Monitor start a foreground monitor that updates every
