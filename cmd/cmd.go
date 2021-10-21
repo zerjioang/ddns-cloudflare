@@ -35,6 +35,8 @@ var startCmd = &cobra.Command{
 func init() {
 	rootCmd.AddCommand(startCmd)
 }
+
+// Execute is the main command line application entry point
 func Execute() error {
 	return rootCmd.Execute()
 }

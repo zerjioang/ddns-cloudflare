@@ -2,6 +2,7 @@ package datatypes
 
 import "os"
 
+// Payload wraps all required data to successfully execute a CF API DDNS A record update
 type Payload struct {
 	// Zone is Clouflare DNS zone
 	// example: example.com
