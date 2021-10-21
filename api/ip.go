@@ -24,9 +24,6 @@ func OutboundIP() string {
 }
 
 // externalIP returns external IP of current device
-//
-// NOTE:  Unfortunately, this will only work on networks
-// that don't employ the use of NAT.
 func externalIP() string {
 	req, err := http.Get("http://ip-api.com/json/")
 	if err != nil {

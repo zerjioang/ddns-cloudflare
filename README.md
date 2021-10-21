@@ -17,8 +17,6 @@
     </a>
 </p>
 
-![example workflow](https://github.com/zerjioang/ddns-cloudflare/actions/workflows/go/badge.svg)
-
 ## Introduction
 
 DDNS is an agent that continuously monitors changes in the public Internet IP address of a connection for a host and updates Cloudflare's DNS when a change is detected.
