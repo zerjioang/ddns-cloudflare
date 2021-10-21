@@ -22,8 +22,8 @@ var rootCmd = &cobra.Command{
 
 var startCmd = &cobra.Command{
 	Use:   "update",
-	Short: "start service",
-	Long:  `start service`,
+	Short: "update DDNS IP",
+	Long:  `start IP address update procedure using Cloudllare v4 API`,
 	Run: func(cmd *cobra.Command, args []string) {
 		if err := api.Start(); err != nil {
 			_, _ = fmt.Fprintln(os.Stderr, err)
@@ -32,8 +32,21 @@ var startCmd = &cobra.Command{
 	},
 }
 
+var monitorCmd = &cobra.Command{
+	Use:   "monitor",
+	Short: "start monitor",
+	Long:  `start a foreground monitor that updates every 10 minutes the IP of the device`,
+	Run: func(cmd *cobra.Command, args []string) {
+		if err := api.Monitor(); err != nil {
+			_, _ = fmt.Fprintln(os.Stderr, err)
+			os.Exit(1)
+		}
+	},
+}
+
 func init() {
 	rootCmd.AddCommand(startCmd)
+	rootCmd.AddCommand(monitorCmd)
 }
 
 // Execute is the main command line application entry point
