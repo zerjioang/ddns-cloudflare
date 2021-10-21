@@ -70,9 +70,9 @@ Previous command will try to update the DNS A Record of `rpi.example.com` with t
 * **X_CF_AGENT_ZONE**: name of the DNS zone you want to edit
 * **X_CF_AGENT_DNS_A_RECORD**: name of the DNS Record name you want to edit.
 
-## Configure autostart
+## Start modes
 
-### Using systemd autostart
+### Option 1: Using systemd autostart
 
 Edit the ddns-cloudflare.service file and move it to `/etc/systemd/system/`, then run:
 
@@ -81,6 +81,49 @@ sudo systemctl daemon-reload
 sudo systemctl enable ddns-cloudflare
 sudo systemctl start ddns-cloudflare
 ```
+
+### Option 2: Using cron
+
+Access to your cron file with `crontab -e` and add the following content. For example, in order to update the device IP eery 10 minutes you need to add
+
+```bash
+# run a Cloudflare DDNS updater each 10 minutes
+*/10 * * * * /opt/ddns-cloudflare update
+```
+
+You can verify the content of the with `crontab -l`. Your new line in the crontab file should look like
+
+```bash
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+
+# run a Cloudflare DDNS updater each 10 minutes
+*/10 * * * * /opt/ddns-cloudflare update
+```
+
+I recommend you to use https://crontab.guru/ if you want to easily configure the crontab timing
+
 ## Troubleshooting
 
 ### API Token must not be empty
