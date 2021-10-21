@@ -26,7 +26,7 @@ An example setup illustrated below has a Raspberry Pi running a webserver with D
 
 ## Goal
 
-It updates your device (raspberru pi, beaglebone, linux, container, vm, etc) IP address on a Dynamic
+It updates your device (raspberry pi, beaglebone, linux, container, vm, etc) IP address on a Dynamic
 DNS provider like Cloudflare so that you can forget about device IP and use it a DNS name.
 
 ## Requirements
@@ -37,10 +37,28 @@ DNS provider like Cloudflare so that you can forget about device IP and use it a
 
 ## Usage
 
+Some usage examples:
+
 ```bash
 X_CF_AGENT_TOKEN=yourtoken \
 X_CF_AGENT_ZONE=example.com \
 X_CF_AGENT_DNS_A_RECORD=rpi \
+cfagent update
+```
+
+```bash
+export X_CF_AGENT_TOKEN=yourtoken
+export X_CF_AGENT_ZONE=example.com
+export X_CF_AGENT_DNS_A_RECORD=rpi
+
+cfagent update
+```
+
+```bash
+echo 'export X_CF_AGENT_TOKEN=yourtoken' >> $HOME/.bashrc
+echo 'export X_CF_AGENT_ZONE=example.com' >> $HOME/.bashrc
+echo 'export X_CF_AGENT_DNS_A_RECORD=rpi' >> $HOME/.bashrc
+
 cfagent update
 ```
 
