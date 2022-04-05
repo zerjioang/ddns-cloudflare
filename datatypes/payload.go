@@ -15,6 +15,11 @@ type Payload struct {
 	Token string
 }
 
+// FQDN returns the FQDN
+func (p Payload) FQDN() string {
+	return p.DNSRecord + "." + p.Zone
+}
+
 // NewPayload creates a new payload based on user requested data from ENV vars
 func NewPayload() *Payload {
 	return &Payload{

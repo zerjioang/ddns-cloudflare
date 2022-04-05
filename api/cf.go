@@ -2,6 +2,7 @@ package api
 
 import (
 	"context"
+	"github.com/zerjioang/ddns-cloudflare/datatypes"
 	"log"
 
 	"github.com/cloudflare/cloudflare-go"
@@ -14,21 +15,21 @@ var (
 )
 
 // triggerDDNSUpdate returns CLoudFLare zone identifier for given zone name
-func triggerDDNSUpdate(token string, zone string, aName string, currIp string) error {
+func triggerDDNSUpdate(p *datatypes.Payload, currIp string) error {
 	// Construct a new API object
-	api, err := cloudflare.NewWithAPIToken(token)
+	api, err := cloudflare.NewWithAPIToken(p.Token)
 	if err != nil {
 		return err
 	}
 	// Fetch the zone ID
 	// Assuming example.com exists in your Cloudflare account already
-	zoneId, err := api.ZoneIDByName(zone)
+	zoneId, err := api.ZoneIDByName(p.Zone)
 	if err != nil {
 		return err
 	}
 	log.Println("Cloudflare ZONE ID: ", zoneId)
 	rr, err := api.DNSRecords(ctx, zoneId, cloudflare.DNSRecord{
-		Name: aName + "." + zone,
+		Name: p.FQDN(),
 		Type: "A",
 	})
 	if err != nil {
