@@ -1,6 +1,8 @@
 package datatypes
 
-import "os"
+import (
+	"os"
+)
 
 // Payload wraps all required data to successfully execute a CF API DDNS A record update
 type Payload struct {
@@ -17,6 +19,9 @@ type Payload struct {
 
 // FQDN returns the FQDN
 func (p Payload) FQDN() string {
+	if "@" == p.DNSRecord {
+		return p.Zone
+	}
 	return p.DNSRecord + "." + p.Zone
 }
 
